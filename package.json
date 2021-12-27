@@ -1,0 +1,63 @@
+{
+  "name": "cicdexample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "start:clear": "react-native start --resetCache",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "pod_install": "cd ios && pod install && cd ..",
+    "android:adb": "adb reverse tcp:8081 tcp:8081",
+    "android:clean": "cd android && ./gradlew clean && cd ..",
+    "android:assemble": "cd android && ./gradlew assembleRelease && cd ..",
+    "android:bundle": "cd android && ./gradlew bundleRelease && cd ..",
+    "clean": "cd android && ./gradlew clean && cd .. && cd ios && xcodebuild clean",
+    "build": "npx react-native run-android",
+    "release": "cd android && ./gradlew app:assembleRelease",
+    "bundle": "cd android && ./gradlew bundleRelease",
+    "emlist": "~/Library/Android/sdk/tools/emulator -list-avds",
+    "emrun": "~/Library/Android/sdk/emulator/emulator -avd Pixel_2_API_28",
+    "archive": "yarn clean && rm -rf node_modules/ && rm -rf ios/Pods && cd .. && zip -r ExpandCart.zip ExpandCart && cd ExpandCart && yarn",
+    "pod": "cd ios && pod install"
+  },
+  "dependencies": {
+    "appcenter": "^4.3.0",
+    "appcenter-analytics": "^4.3.0",
+    "appcenter-crashes": "^4.3.0",
+    "react": "17.0.2",
+    "react-native": "0.66.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/react-native": "^0.66.4",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.14.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^4.4.4"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
