@@ -108,7 +108,7 @@ const Input = () => {
         Which will be worth $
         {parseFloat(inputs.atRiskFreeAfterInflation)
           .toFixed(2)
-          .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}{' '}
+          .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
         after inflation.
       </Text>
     </View>
@@ -122,12 +122,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
   },
-  input: {
-    width: '100%',
-    height: 35,
-    borderWidth: 0.5,
-    marginVertical: 8,
-  },
+
   label: {
     marginTop: 10,
   },
@@ -142,7 +137,7 @@ const styles = StyleSheet.create({
     paddingLeft: 6,
     borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 10,
+    marginVertical: 10,
     borderRadius: 5,
   },
 });
